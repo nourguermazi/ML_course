@@ -23,8 +23,8 @@ def least_squares(y, tx):
     (array([ 0.21212121, -0.12121212]), 8.666684749742561e-33)
     """
     # ***************************************************
-    # COPY YOUR CODE FROM EX03 HERE
-    # least squares: TODO
-    # returns optimal weights, MSE
+    N = len(y)
+    w = np.linalg.solve(tx.T @ tx, tx.T @ y)
+    mse = (1 / (2 * N)) * np.sum((y - tx @ w) ** 2)
+    return w, mse
     # ***************************************************
-    raise NotImplementedError
